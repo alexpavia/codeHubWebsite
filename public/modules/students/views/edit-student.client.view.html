@@ -1,0 +1,27 @@
+<section data-ng-controller="StudentsController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Student</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="student.name" id="name" class="form-control" placeholder="Name" required>
+                        <input type="text" data-ng-model="student.profilePic" id="profilePic" class="form-control" placeholder="Profile Picture" required>
+                        <input type="text" data-ng-model="student.linkedIn" id="linkedIn" class="form-control" placeholder="LinkedIn Account" required>
+                        <input type="text" data-ng-model="student.gitHub" id="gitHub" class="form-control" placeholder="Github Account" required>
+                        <input type="text" data-ng-model="student.bio" id="bio" class="form-control" placeholder="Quick Bio">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>
