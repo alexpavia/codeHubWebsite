@@ -1,0 +1,20 @@
+<section data-ng-controller="CodehubblogsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Codehubblogs</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="codehubblog in codehubblogs" data-ng-href="#!/codehubblogs/{{codehubblog._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="codehubblog.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="codehubblog.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="codehubblog.name"></h4>
+            <h4 class="list-group-item-heading" data-ng-bind="codehubblog.contents"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!codehubblogs.$resolved || codehubblogs.length">
+    	No Codehubblogs yet, why don't you <a href="/#!/codehubblogs/create">create one</a>?
+    </div>
+</section>
